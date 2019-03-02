@@ -1,0 +1,53 @@
+<h4 align="center">Admin Login</h4>
+<form (ngSubmit)="onlogin(f)" #f="ngForm">
+<div class="example-container" align="center">
+  <mat-form-field>
+      <input matInput 
+        placeholder="Email Id" 
+        [(ngModel)]="email"
+        name="email"
+        required
+        email
+        #emailid="ngModel">
+  </mat-form-field>
+  <div [hidden]= "emailid?.valid || emailid?.untouched">
+    <div [hidden]="!emailid?.errors?.required">
+          Email is a required filed
+    </div>
+    <div [hidden]="!emailid?.errors?.email">
+          Please enter a valid email
+    </div>
+  </div>
+<br>
+  <mat-form-field>
+    <input matInput placeholder="Password" 
+    [(ngModel)]="password"
+    name="password"
+    required
+    #pass="ngModel"
+    [type]="hide ? 'password' : 'text'">
+    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+  </mat-form-field>
+  <div [hidden]= "pass?.valid || pass?.untouched">
+    <div [hidden]="!pass?.errors?.required">
+      Password is a required filed
+    </div>
+    <!-- <div [hidden]="!pass?.errors?.maxlength">
+      Password can be upto 8 characters only
+    </div>
+    <div [hidden]="!pass?.errors?.minlength">
+      Password has to be of atleast 6 characters
+    </div> -->
+</div>
+<br>
+</div>
+</form>
+<div class="button">
+
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" [disabled]="!f.valid" (click)="onlogin()" mat-raised-button color="primary">Login</button>
+  <br><br>
+  <button (click)="onforgot()" mat-raised-button color="accent">Forgot Password</button>
+</div>
+<!-- <button (click)="oncancel()" mat-raised-button color="warn">Cancel</button> -->
+
+    

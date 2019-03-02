@@ -1,0 +1,226 @@
+<h3>Add Influencer</h3>
+<hr>
+<form (ngSubmit)="onaddinflu(f)" #f="ngForm"></form>
+<div class="example-container" align="center">
+  <mat-form-field>
+    <input matInput 
+    placeholder="Influencer Name" 
+    [(ngModel)]="name"
+    name="name"
+    required
+    #nameofinflu=ngModel>
+  </mat-form-field>
+  <div [hidden]= "nameofinflu?.valid || nameofinflu?.untouched">
+    <div [hidden]="!nameofinflu?.errors?.required">
+      Name is a required filed
+    </div>
+  </div>
+<br>
+  <mat-form-field>
+    <input matInput placeholder="Profile Pic" [(ngModel)]="profilePic" name="profilePic" >
+  </mat-form-field>
+<br> 
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker" 
+    placeholder="Birth Date" 
+    [(ngModel)]="birthDate"
+    name="birthDate"
+    required
+    #birth="ngModel">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <div [hidden]= "birth?.valid || birth?.untouched">
+    <div [hidden]="!birth?.errors?.required">
+      Date of Birth is a required filed
+    </div>
+  </div>
+
+<br>
+  <mat-radio-group 
+  [(ngModel)]="gender"
+  name="gender"
+  required
+  #g="ngModel">
+    <mat-radio-button value="male">Male</mat-radio-button>&nbsp;&nbsp;
+    <mat-radio-button value="female">Female</mat-radio-button>
+  </mat-radio-group>
+  <div [hidden]= "g?.valid || g?.untouched">
+    <div [hidden]="!g?.errors?.required">
+      Gender is a required filed
+    </div>
+  </div>
+<br>
+  <mat-form-field>
+    <input matInput 
+    placeholder="Contact" 
+    [(ngModel)]="mobile"
+    name="mobile"
+    required
+    #contact="ngModel">
+  </mat-form-field>
+  <div [hidden]= "contact?.valid || contact?.untouched">
+    <div [hidden]="!contact?.errors?.required">
+      Contact Number is a required filed
+    </div>
+  </div>
+<br>
+  <mat-form-field>
+    <input matInput 
+    placeholder="Email" 
+    [(ngModel)]="email"
+    name="email"
+    required
+    email
+    #emailid="ngModel">
+  </mat-form-field>
+  <div [hidden]= "emailid?.valid || emailid?.untouched">
+    <div [hidden]="!emailid?.errors?.required">
+      Email is a required filed
+    </div>
+    <div [hidden]="!emailid?.errors?.email">
+      Please enter a valid email
+      </div>
+  </div> 
+<br>
+  <mat-form-field>
+    <input matInput 
+    placeholder="User Name" 
+    [(ngModel)]="uname"
+    name="uname"
+    required
+    #username="ngModel">
+  </mat-form-field>
+  <div [hidden]= "username?.valid || username?.untouched">
+    <div [hidden]="!username?.errors?.required">
+      User Name is a required filed
+    </div>
+  </div>
+  
+<br>
+<mat-form-field>
+  <input matInput placeholder="Password" 
+  [(ngModel)]="password"
+  name="password"
+  required
+  maxlength="8"
+  minlength="6"
+  #pass="ngModel"
+  [type]="hide ? 'password' : 'text'">
+  <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+</mat-form-field>
+  <div [hidden]= "pass?.valid || pass?.untouched">
+    <div [hidden]="!pass?.errors?.required">
+      Password is a required filed
+    </div>
+    <div [hidden]="!pass?.errors?.maxlength">
+      Password can be upto 8 characters only
+    </div>
+    <div [hidden]="!pass?.errors?.minlength">
+      Password has to be of atleast 6 characters
+    </div>
+  </div>
+ 
+<br>
+<mat-form-field>
+    <mat-select 
+    placeholder="First Field" 
+    [(ngModel)]="field1"
+    name="field1"
+    required
+    #industry="ngModel">
+    <mat-option *ngFor="let item of field_arr" value={{item.f_name}} > {{item.f_name}} </mat-option>
+  </mat-select>
+</mat-form-field>
+  <div [hidden]= "industry?.valid || industry?.untouched">
+    <div [hidden]="!industry?.errors?.required">
+      Required filed
+    </div>
+  </div>
+<br>
+<mat-form-field>
+  <mat-select 
+  placeholder="Second Field" 
+  [(ngModel)]="field2"
+  name="field2">
+  <mat-option *ngFor="let item of field_arr" value={{item.f_name}} > {{item.f_name}} </mat-option>
+</mat-select>
+</mat-form-field>
+<br>
+<mat-form-field>
+  <mat-select 
+  placeholder="Third Field" 
+  [(ngModel)]="field3"
+  name="field3">
+  <mat-option *ngFor="let item of field_arr" value={{item.f_name}} > {{item.f_name}} </mat-option>
+</mat-select>
+</mat-form-field>
+<br>
+  <mat-form-field>
+    <input matInput placeholder="FaceBook Link" [(ngModel)]="fbLink" name="fbLink" >
+  </mat-form-field>
+<br>
+  <mat-form-field>
+    <input matInput placeholder="Instagram Link" [(ngModel)]="instaLink" name="instaLink">
+  </mat-form-field>
+<br>
+  <mat-form-field>
+    <input matInput placeholder="Twitter Link" [(ngModel)]="twitterLink" name="twitterLink">
+  </mat-form-field>
+<br>
+  <mat-form-field>
+    <input matInput placeholder="FaceBook Reach" [(ngModel)]="fbReach" name="fbReach">
+  </mat-form-field>
+<br>
+  <mat-form-field>
+    <input matInput placeholder="Instagram Reach" [(ngModel)]="instaReach" name="instaReach">
+  </mat-form-field>
+<br>
+  <mat-form-field>
+    <input matInput placeholder="Twitter Reach" [(ngModel)]="twitterReach" name="twitterReach">
+  </mat-form-field>
+<br>
+  <mat-form-field>
+    <input matInput 
+    placeholder="Amount Per Collaboration"  
+    [(ngModel)]="fees"
+    name="fees"
+    required
+    #payment="ngModel"
+    type="number" class="example-right-align">
+    <span matPrefix>Rs.&nbsp;</span>
+    <span matSuffix>.00</span>
+  </mat-form-field>
+  <div [hidden]= "payment?.valid || payment?.untouched">
+    <div [hidden]="!payment?.errors?.required">
+      Amount is a required filed
+    </div>
+  </div>
+<br>
+  <mat-form-field>
+    <textarea matInput placeholder="Bio" [(ngModel)]="bio" name="bio"></textarea>
+  </mat-form-field>
+<br>
+<mat-form-field class="example-full-width">
+    <input type="text" [(ngModel)]="profession" name="profession" placeholder="Profession" aria-label="profession" matInput [formControl]="myControl" [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  
+  <!-- <div [hidden]= "pro?.valid || pro?.untouched">
+    <div [hidden]="!pro?.errors?.required">
+      Profession is a required field
+    </div>
+  </div> -->
+<br>
+</div>
+<div class="button">
+    <button type="submit" [disabled]="!f.valid" (click)="onaddinflu()" mat-raised-button color="primary">Add Influencer</button>
+    &nbsp;&nbsp;
+    <button (click)="oncancel()" mat-raised-button color="warn">Cancel</button>
+</div>
+
+

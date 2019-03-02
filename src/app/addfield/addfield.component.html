@@ -1,0 +1,41 @@
+<h3>Add Field</h3>
+<form (ngSubmit)="onaddbrand(f)" #f="ngForm"> 
+<div class="example-container" align="center">
+  <mat-form-field>
+    <input matInput 
+    placeholder="Field Name" 
+    [(ngModel)]="f_name"
+    name="f_name"
+    required
+    #nameoffield=ngModel>
+  </mat-form-field>
+  <div [hidden]= "nameoffield?.valid || nameoffield?.untouched">
+    <div [hidden]="!nameoffield?.errors?.required">
+      Name is a required filed
+    </div>
+  </div>
+<br>
+<mat-form-field>
+      <input matInput 
+      placeholder="Image" 
+      [(ngModel)]="image"
+      name="image" 
+      required
+      type="file"
+      #pic=ngModel
+      (change)="onChange($event)">
+    </mat-form-field>
+    <div [hidden]= "pic?.valid || pic?.untouched">
+      <div [hidden]="!pic?.errors?.required">
+        Image is a required filed
+      </div>
+    </div>
+<br>
+</div>
+</form>
+<br>
+<div class="button">
+    <button type="submit" [disabled]="!f.valid" (click)="onaddfield()" mat-raised-button color="primary">Add Field</button>
+    &nbsp;&nbsp;
+    <button (click)="oncancel()" mat-raised-button color="warn">Cancel</button>
+</div>

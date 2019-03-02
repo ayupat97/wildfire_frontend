@@ -1,0 +1,16 @@
+.lsc{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+  
+  .bi{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+  }
+  
+  .what{
+    position: absolute;
+    left: 0px;
+  }

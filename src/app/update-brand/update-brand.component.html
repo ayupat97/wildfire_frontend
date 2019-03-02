@@ -1,0 +1,122 @@
+<h3>Update Brand</h3>
+<form (ngSubmit)="onaddbrand(f)" #f="ngForm">
+<div class="example-container" align="center">
+  <mat-form-field>
+    <input matInput 
+    placeholder="Brand Name" 
+    [(ngModel)]="name"
+    name="name"
+    required
+    #nameofbrand=ngModel>
+  </mat-form-field>
+  <div [hidden]= "nameofbrand?.valid || nameofbrand?.untouched">
+    <div [hidden]="!nameofbrand?.errors?.required">
+      Name is a required filed
+    </div>
+  </div>
+<br>
+  <mat-form-field>
+      <input matInput 
+      placeholder="Profile Pic" 
+      [(ngModel)]="profilePic"
+      name="profilePic" >
+    </mat-form-field>
+<br>
+  <mat-form-field>
+    <input matInput 
+    placeholder="Email Id" 
+    [(ngModel)]="email"
+    name="email"
+    required
+    email
+    #emailid="ngModel">
+  </mat-form-field>
+  <div [hidden]= "emailid?.valid || emailid?.untouched">
+    <div [hidden]="!emailid?.errors?.required">
+      Email is a required filed
+    </div>
+    <div [hidden]="!emailid?.errors?.email">
+      Please enter a valid email
+      </div>
+  </div>
+<br>
+  <mat-form-field>
+    <input matInput 
+    placeholder="User Name" 
+    [(ngModel)]="uname"
+    name="uname"
+    required
+    #username="ngModel">
+  </mat-form-field>
+  <div [hidden]= "username?.valid || username?.untouched">
+    <div [hidden]="!username?.errors?.required">
+      User Name is a required filed
+    </div>
+  </div>
+<br>
+<mat-form-field>
+  <input matInput placeholder="Password" 
+  [(ngModel)]="password"
+  name="password"
+  required
+  maxlength="8"
+  minlength="6"
+  #pass="ngModel"
+  [type]="hide ? 'password' : 'text'">
+  <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+</mat-form-field>
+  <div [hidden]= "pass?.valid || pass?.untouched">
+    <div [hidden]="!pass?.errors?.required">
+      Password is a required filed
+    </div>
+    <div [hidden]="!pass?.errors?.maxlength">
+      Password can be upto 8 characters only
+    </div>
+    <div [hidden]="!pass?.errors?.minlength">
+      Password has to be of atleast 6 characters
+    </div>
+  </div>
+
+<br>
+  <mat-form-field>
+    <mat-select 
+    placeholder="Field of Intrest" 
+    [(ngModel)]="field"
+    name="field"
+    required
+    #industry="ngModel">
+    <mat-option *ngFor="let item of field_arr" value={{item.f_name}} > {{item.f_name}} </mat-option>
+  </mat-select>
+  </mat-form-field>
+  <div [hidden]= "industry?.valid || industry?.untouched">
+    <div [hidden]="!industry?.errors?.required">
+      Required filed
+    </div>
+  </div>
+<br>
+  <mat-form-field>
+    <textarea matInput 
+    placeholder="Bio" 
+    [(ngModel)]="bio"
+    name="bio"></textarea>
+  </mat-form-field>
+<br>
+  <mat-form-field>
+    <input matInput placeholder="FaceBook Link" [(ngModel)]="fbLink" name="fbLink">
+  </mat-form-field>
+<br>
+  <mat-form-field>
+    <input matInput placeholder="Instagram Link" [(ngModel)]="instaLink" name="instaLink">
+  </mat-form-field>
+<br>
+  <mat-form-field>
+    <input matInput placeholder="Twitter Link" [(ngModel)]="twitterLink" name="twitterLink">
+  </mat-form-field>
+</div>
+</form>
+<br>
+<div class="button">
+    <button type="submit" [disabled]="!f.valid" (click)="onupdate()" mat-raised-button color="primary">Update Brand</button>
+    &nbsp;&nbsp;
+    <button (click)="oncancel()" mat-raised-button color="warn">Cancel</button>
+</div>

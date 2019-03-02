@@ -1,0 +1,86 @@
+<h3>Add Admin</h3>
+<hr>
+<form (ngSubmit)="onaddadmin(f)" #f="ngForm">
+<div class="example-container" align="center">
+  <mat-form-field>
+    <input matInput 
+    placeholder="Name" 
+    [(ngModel)]="name"
+    name="name"
+    required
+    #nameofbrand=ngModel>
+  </mat-form-field>
+  <div [hidden]= "nameofbrand?.valid || nameofbrand?.untouched">
+    <div [hidden]="!nameofbrand?.errors?.required">
+      Name is a required filed
+    </div>
+  </div>
+<br>
+<mat-form-field>
+  <input matInput 
+  placeholder="Contact Info" 
+  [(ngModel)]="mobile"
+  name="mobile"
+  required
+  #contact="ngModel">
+</mat-form-field>
+<div [hidden]= "contact?.valid || contact?.untouched">
+  <div [hidden]="!contact?.errors?.required">
+    Contact Number is a required filed
+  </div>
+</div>
+<br>
+<mat-form-field>
+  <input matInput 
+  placeholder="Email Id" 
+  [(ngModel)]="email"
+  name="email"
+  email
+  required
+  #emailid="ngModel">
+</mat-form-field>
+<div [hidden]= "emailid?.valid || emailid?.untouched">
+  <div [hidden]="!emailid?.errors?.required">
+    Email is a required filed
+  </div>
+  <div [hidden]="!emailid?.errors?.email">
+    Please enter a valid email
+    </div>
+</div>
+<br>
+<mat-form-field>
+  <input matInput placeholder="Password" 
+  [(ngModel)]="password"
+  name="password"
+  required
+  maxlength="8"
+  minlength="6"
+  #pass="ngModel"
+  [type]="hide ? 'password' : 'text'">
+  <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+</mat-form-field>
+<div [hidden]= "pass?.valid || pass?.untouched">
+  <div [hidden]="!pass?.errors?.required">
+    Password is a required filed
+  </div>
+  <div [hidden]="!pass?.errors?.maxlength">
+    Password can be upto 8 characters only
+  </div>
+  <div [hidden]="!pass?.errors?.minlength">
+    Password has to be of atleast 6 characters
+  </div>
+</div>
+</div>
+</form>
+<br>
+<div class="rows">
+  <div class="col-md-3">
+<div class="example-button-row">
+<button type="submit" [disabled]="!f.valid" (click)="onaddadmin()" mat-raised-button color="primary">
+    <i class="material-icons">add_circle</i>
+  Add Admin</button>
+&nbsp;&nbsp;
+<button (click)="oncancel()" mat-raised-button color="warn">Cancel</button>
+</div>
+</div>
+</div>

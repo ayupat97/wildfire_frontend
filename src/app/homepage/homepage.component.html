@@ -1,0 +1,183 @@
+<div class="bi">
+<button (click)="onbrand()" mat-raised-button color="primary">Brands/Agencies</button>&nbsp;&nbsp;
+<button (click)="oninflu()" mat-raised-button color="primary">Bloggers/Influencers</button>
+</div>
+<div class="lsc">
+<button (click)="onlogin()" mat-raised-button color="primary">Login</button>&nbsp;&nbsp;
+<button (click)="onsignup()" mat-raised-button color="primary">Sign-Up</button>&nbsp;&nbsp;
+<button (click)="oncontact()" mat-raised-button color="primary">Contact Us</button>
+</div>
+<br><br>
+<hr>
+
+<div class="what">
+What Is WildFire???
+<br>
+The primary objective of WILDFIRE is to provide a platform to connect Influencers and Brands which have marketing requirements. The Influencers use their potentials and well organized platforms to market the brands in a digital way such that the brands gain exposure and traffic over their market.  
+<br>
+</div>
+<br><br><br><br>
+
+<div class="why">
+Why WildFire???
+<div class="rows">
+  <div class="col-md-12">
+    
+<div class="rows">
+      
+<div class="col-sm-6 col-md-4">  
+  <mat-card class="example-card">
+    <mat-card-header>
+      <!-- <div mat-card-avatar class="example-header-image"></div> -->
+      <mat-card-title>Linking</mat-card-title>
+      <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+      </mat-card-header>
+      <img mat-card-image src="../../assets/images/linking.jpg" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p>
+            We believe WildFire can serve as the best platform for linking both the parties i.e. Influencers and Brands. It would act as a tool for building a community and strengthening the ties that bind them together resulting into effective digital marketing.
+        </p>
+      </mat-card-content>
+</mat-card>
+</div>
+<div class="col-sm-6 col-md-4">
+<mat-card class="example-card">
+   <mat-card-header>
+     <!-- <div mat-card-avatar class="example-header-image"></div> -->
+     <mat-card-title>Clarification</mat-card-title>
+     <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+     </mat-card-header>
+     <img mat-card-image src="../../assets/images/clarification.jpg" alt="Photo of a Shiba Inu">
+     <mat-card-content>
+      <p>
+          Well clarified terms, deliverables and deadlines before the collaboration commences, and then sticking to those defined criteria keeps the contract clear and avoids any disputes that may occur.
+      </p>
+     </mat-card-content>
+</mat-card>
+</div>
+<div class="col-sm-6 col-md-4">
+<mat-card class="example-card">
+    <mat-card-header>
+      <!-- <div mat-card-avatar class="example-header-image"></div> -->
+      <mat-card-title>Reduced Time Consumption</mat-card-title>
+      <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+      </mat-card-header>
+      <img mat-card-image src="../../assets/images/time.png" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+       <p>
+          By keeping the process and selection machine-dependent, the time utilized in gathering information for creation of list of Influencers to be assigned for the marketing work can be reduced. Fetching of details can be accomplished on a single platform which facilitates in time reduction as supposed to if  process would have been accomplished using different resources.
+      </p>
+      </mat-card-content>
+ </mat-card>
+ </div>
+ <div class="col-sm-6 col-md-4"> 
+ <mat-card class="example-card">
+    <mat-card-header>
+      <!-- <div mat-card-avatar class="example-header-image"></div> -->
+      <mat-card-title>Reduced Man Power</mat-card-title>
+      <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+      </mat-card-header>
+      <img mat-card-image src="../../assets/images/manpower.jpg" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+       <p>
+          The entire process being taken care of by the software removes the necessity of having any MarCom Manager for the company. The creation of list of bloggers which are being assigned the marketing task and managing their response on invites can all be managed by the software which reduces man’s effort in managing the same or being worried about each of it separately. Also, it stores the details in an effective manner which again reduces man’s efforts in doing the same. 
+        </p>
+      </mat-card-content>
+ </mat-card>
+ </div>
+ <div class="col-sm-6 col-md-4"> 
+ <mat-card class="example-card">
+    <mat-card-header>
+      <!-- <div mat-card-avatar class="example-header-image"></div> -->
+      <mat-card-title>Alleviate Fraudulent Collaborations:</mat-card-title>
+      <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+      </mat-card-header>
+      <img mat-card-image src="../../assets/images/fraud.jpg" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+       <p>
+          Verification of profiles being registered on the system in terms of genuineness, existence of an updated blog, the ratings being adequate as per the evaluation of the software with reference to real environment. Follow-ups after the collaboration commences and winds up are taken if the deliverables have been completed. 
+        </p>
+      </mat-card-content>
+ </mat-card>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <br>
+
+<div class="rows" class="how">
+  Know the Process!!
+  <mat-horizontal-stepper #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Registration </ng-template>
+        Parties on both the end (Brands and Influencers) are supposed to register themselves on the system marking their existence into the system.
+            <div>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Hunt for Influencers</ng-template>
+         Whenever the requirement arises by the industrial brands, it is posted on the system and the specific bloggers fitting to the criteria of the requirements will receive an invite for the same.
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>Join Collaboration</ng-template>
+          The Influencers that will to collaborate and fulfill the requirements can accept the invite.
+
+              <div>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>Submit Deliverables/Payment</ng-template>
+          Upon completion of collaboration the Influencers are expected to submit all deliverables, if this is sucessfully submitted the Influencers will receive payment agreed upn.
+
+              <div>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>Review</ng-template>
+          Both parties are now able to review their expirience with each other.
+              <div>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+        </form>
+    </mat-step>
+    <mat-step>
+          <ng-template matStepLabel>Done</ng-template>
+          You are now done.
+          <div>
+           <!-- <button mat-button matStepperPrevious>Back</button> -->
+            <button mat-button (click)="stepper.reset()">Reset</button>
+          </div>
+        </mat-step>
+      </mat-horizontal-stepper>
+
+
+<br>
+<hr>
+<div class="rows" >
+  <div class="influ">
+    Top Influencers!!
+  </div>
+  <div class="brand">
+    Top Brands!!
+  </div>
+</div>
+
+
+

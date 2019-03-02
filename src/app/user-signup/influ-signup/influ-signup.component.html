@@ -1,0 +1,142 @@
+<h3>Influencer Signup</h3>
+<hr>
+<form (ngSubmit)="onsignup(f)" #f="ngForm"></form>
+<div class="example-container" align="center">
+  <mat-form-field>
+    <input matInput 
+    placeholder="Influencer Name" 
+    [(ngModel)]="name"
+    name="name"
+    required
+    #nameofinflu=ngModel>
+  </mat-form-field>
+  <div [hidden]= "nameofinflu?.valid || nameofinflu?.untouched">
+    <div [hidden]="!nameofinflu?.errors?.required">
+      Name is a required filed
+    </div>
+  </div>
+<br>
+  <mat-radio-group 
+  [(ngModel)]="gender"
+  name="gender"
+  required
+  #g="ngModel">
+    <mat-radio-button value="male">Male</mat-radio-button>&nbsp;&nbsp;
+    <mat-radio-button value="female">Female</mat-radio-button>
+  </mat-radio-group>
+  <div [hidden]= "g?.valid || g?.untouched">
+    <div [hidden]="!g?.errors?.required">
+      Gender is a required filed
+    </div>
+  </div>
+<br>
+
+  <mat-form-field>
+    <input matInput 
+    placeholder="Email" 
+    [(ngModel)]="email"
+    name="email"
+    required
+    email
+    #emailid="ngModel">
+  </mat-form-field>
+  <div [hidden]= "emailid?.valid || emailid?.untouched">
+    <div [hidden]="!emailid?.errors?.required">
+      Email is a required filed
+    </div>
+    <div [hidden]="!emailid?.errors?.email">
+      Please enter a valid email
+      </div>
+  </div> 
+
+<br>
+<mat-form-field>
+  <input matInput placeholder="Password" 
+  [(ngModel)]="password"
+  name="password"
+  required
+  maxlength="8"
+  minlength="6"
+  #pass="ngModel"
+  [type]="hide ? 'password' : 'text'">
+  <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+</mat-form-field>
+  <div [hidden]= "pass?.valid || pass?.untouched">
+    <div [hidden]="!pass?.errors?.required">
+      Password is a required filed
+    </div>
+    <div [hidden]="!pass?.errors?.maxlength">
+      Password can be upto 8 characters only
+    </div>
+    <div [hidden]="!pass?.errors?.minlength">
+      Password has to be of atleast 6 characters
+    </div>
+  </div>
+ 
+<br>
+<mat-form-field>
+    <mat-select 
+    placeholder="First Field" 
+    [(ngModel)]="field1"
+    name="field1"
+    required
+    #industry="ngModel">
+    <mat-option *ngFor="let item of field_arr" value={{item.f_name}} > {{item.f_name}} </mat-option>
+  </mat-select>
+</mat-form-field>
+  <div [hidden]= "industry?.valid || industry?.untouched">
+    <div [hidden]="!industry?.errors?.required">
+      Required filed
+    </div>
+  </div>
+<br>
+
+  <mat-form-field>
+    <input matInput placeholder="FaceBook Link" [(ngModel)]="fbLink" name="fbLink" >
+  </mat-form-field>
+<br>
+  <mat-form-field>
+    <input matInput placeholder="Instagram Link" [(ngModel)]="instaLink" name="instaLink">
+  </mat-form-field>
+<br>
+  <mat-form-field>
+    <input matInput placeholder="Twitter Link" [(ngModel)]="twitterLink" name="twitterLink">
+  </mat-form-field>
+<br>
+  <mat-form-field>
+    <input matInput placeholder="FaceBook Reach" [(ngModel)]="fbReach" name="fbReach">
+  </mat-form-field>
+<br>
+  <mat-form-field>
+    <input matInput placeholder="Instagram Reach" [(ngModel)]="instaReach" name="instaReach">
+  </mat-form-field>
+<br>
+  <mat-form-field>
+    <input matInput placeholder="Twitter Reach" [(ngModel)]="twitterReach" name="twitterReach">
+  </mat-form-field>
+<br>
+  <mat-form-field>
+    <input matInput 
+    placeholder="Amount Per Collaboration"  
+    [(ngModel)]="fees"
+    name="fees"
+    required
+    #payment="ngModel"
+    type="number" class="example-right-align">
+    <span matPrefix>Rs.&nbsp;</span>
+    <span matSuffix>.00</span>
+  </mat-form-field>
+  <div [hidden]= "payment?.valid || payment?.untouched">
+    <div [hidden]="!payment?.errors?.required">
+      Amount is a required filed
+    </div>
+  </div>
+<br>
+</div>
+<div class="button">
+    <button type="submit" [disabled]="!f.valid" (click)="onsignup()" mat-raised-button color="primary">Get Started</button>
+    &nbsp;&nbsp;
+    <button (click)="oncancel()" mat-raised-button color="warn">Cancel</button>
+</div>
+
+
