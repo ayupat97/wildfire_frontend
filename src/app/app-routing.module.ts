@@ -35,12 +35,13 @@ import { BrandProfileComponent } from './user-brand/brand-profile/brand-profile.
 import { BrandSmComponent } from './user-brand/brand-sm/brand-sm.component';
 import { BrandPaymentsComponent } from './user-brand/brand-payments/brand-payments.component';
 import { BrandReviewComponent } from './user-brand/brand-review/brand-review.component';
-
+import { CampaignFormComponent } from './campaign-form/campaign-form.component';
 const routes: Routes = [
 
     
     {path:'',component:HomepageComponent},
     {path:'login',component:UserLoginComponent},
+    {path:'campaign_form',component:CampaignFormComponent},
     {path:'brand_login',component:BrandLoginComponent},
     {path:'influ_login',component:InfluLoginComponent},
     {path:'admin_login',component:LoginComponent},

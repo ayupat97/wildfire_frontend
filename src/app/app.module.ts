@@ -59,6 +59,7 @@ import { BrandDashboardComponent } from './user-brand/brand-dashboard/brand-dash
 import { BrandProfileComponent } from './user-brand/brand-profile/brand-profile.component';
 import { BrandSmComponent } from './user-brand/brand-sm/brand-sm.component';
 import { BrandPaymentsComponent } from './user-brand/brand-payments/brand-payments.component';
+import { CampaignFormComponent } from './campaign-form/campaign-form.component';
 
 @NgModule({
   declarations: [
@@ -98,6 +99,7 @@ import { BrandPaymentsComponent } from './user-brand/brand-payments/brand-paymen
     BrandProfileComponent,
     BrandSmComponent,
     BrandPaymentsComponent,
+    CampaignFormComponent,
    
  
   ],
